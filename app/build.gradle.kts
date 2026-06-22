@@ -1,24 +1,24 @@
 plugins {
     id("com.android.application")
-    id("org.jetbrains.kotlin.android")
-    id("kotlin-parcelize")
+    //id("kotlin-parcelize")
     id("com.google.gms.google-services")
 }
 
 android {
     namespace = "com.polok.eubmanagement"
-    compileSdk = libs.versions.compileSdk.get().toInt()
+    compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
         applicationId = "com.polok.eubmanagement"
-        minSdk = libs.versions.minSdk.get().toInt()
-        targetSdk = libs.versions.targetSdk.get().toInt()
+        minSdk = libs.versions.android.minSdk.get().toInt()
+        targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 1
         versionName = "1.0"
     }
 
     buildTypes {
         release {
+            //noinspection NotShrinkingResources
             isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
@@ -29,20 +29,35 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
+        sourceCompatibility = JavaVersion.toVersion(libs.versions.android.targetJvm.get())
+        targetCompatibility = JavaVersion.toVersion(libs.versions.android.targetJvm.get())
     }
     buildFeatures {
         viewBinding = true
     }
 }
 
+kotlin {
+    compilerOptions {
+        jvmTarget.set(
+            org.jetbrains.kotlin.gradle.dsl.JvmTarget.fromTarget(
+                libs.versions.android.targetJvm.get()
+            )
+        )
+    }
+}
+
 dependencies {
     // androidx common dependencies
-    api(libs.bundles.androidx.common.dependencies)
+    api(libs.androidx.coreKtx)
+    api(libs.androidx.appcompat)
+    api(libs.android.material)
+    api(libs.androidx.constraintlayout)
+    api(libs.androidx.lifecycle.runtime)
+    api(libs.androidx.lifecycle.viewmodel)
+    api(libs.androidx.navigation.runtime)
+    api(libs.androidx.navigation.ui.ktx)
+    api(libs.androidx.navigation.fragment)
 
     // firebase
     implementation(platform(libs.firebase.bom))
@@ -51,8 +66,4 @@ dependencies {
 
     // gson
     implementation(libs.gson)
-
-    // tests dependencies
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.bundles.androidx.test.dependencies)
 }
