@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/assignmentListFragment"
-        android:name="com.polok.eubmanagement.presentation.assignment.assignmentlist.AssignmentListFragment"
+        android:name="com.ismail.cu.presentation.assignment.assignmentlist.AssignmentListFragment"
         android:label="Assignments"
         tools:layout="@layout/fragment_assignment_list">
         <action
@@ -35,19 +35,19 @@
 
     <fragment
         android:id="@+id/assignmentAddFragment"
-        android:name="com.polok.eubmanagement.presentation.assignment.assignmentadd.AssignmentAddFragment"
+        android:name="com.ismail.cu.presentation.assignment.assignmentadd.AssignmentAddFragment"
         android:label="Add Assignment"
         tools:layout="@layout/fragment_assignment_add" />
 
     <fragment
         android:id="@+id/assignmentViewFragment"
-        android:name="com.polok.eubmanagement.presentation.assignment.assignmentview.AssignmentViewFragment"
+        android:name="com.ismail.cu.presentation.assignment.assignmentview.AssignmentViewFragment"
         android:label="Assignment"
         tools:layout="@layout/fragment_assignment_view" />
 
     <fragment
         android:id="@+id/assignmentUpdateFragment"
-        android:name="com.polok.eubmanagement.presentation.assignment.assignmentupdate.AssignmentUpdateFragment"
+        android:name="com.ismail.cu.presentation.assignment.assignmentupdate.AssignmentUpdateFragment"
         android:label="Update Assignment"
         tools:layout="@layout/fragment_assignment_update" />
 

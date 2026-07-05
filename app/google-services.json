@@ -1,21 +1,22 @@
 {
   "project_info": {
-    "project_number": "497042725541",
-    "project_id": "eub-management-31952",
-    "storage_bucket": "eub-management-31952.appspot.com"
+    "project_number": "1022027778175",
+    "firebase_url": "https://cityunivercity-9bb4f-default-rtdb.firebaseio.com",
+    "project_id": "cityunivercity-9bb4f",
+    "storage_bucket": "cityunivercity-9bb4f.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:497042725541:android:0a52b8c9fdc20925cdcb4c",
+        "mobilesdk_app_id": "1:1022027778175:android:0c74a527b28488f957d74a",
         "android_client_info": {
-          "package_name": "com.polok.eubmanagement"
+          "package_name": "com.ismail.cu"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBUfDBR5YsZ31Ljuf9zlBzu3mNMUqwRImU"
+          "current_key": "AIzaSyBZN_fYw7xQ-pPbqVj6XW5TCPV_8dwNW2s"
         }
       ],
       "services": {

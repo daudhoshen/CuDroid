@@ -98,7 +98,7 @@
         android:text="@string/save"
         app:layout_constraintBottom_toBottomOf="parent" />
 
-    <com.polok.eubmanagement.widget.PrimaryLoader
+    <com.ismail.cu.widget.PrimaryLoader
         android:id="@+id/primary_loader"
         android:layout_width="match_parent"
         android:layout_height="0dp"

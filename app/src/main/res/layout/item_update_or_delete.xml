@@ -24,7 +24,7 @@
         android:layout_height="24dp"
         android:layout_marginEnd="@dimen/spacing_primary_half"
         android:visibility="gone"
-        android:backgroundTint="@color/color_rose_red"
+        android:backgroundTint="@color/color_red"
         android:text="@string/delete"
         app:icon="@drawable/ic_auto_delete"
         app:layout_constraintBottom_toBottomOf="@id/update_button"

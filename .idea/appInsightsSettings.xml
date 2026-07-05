@@ -27,10 +27,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="com.polok.eubmanagement" />
-                  <option name="mobileSdkAppId" value="1:497042725541:android:0a52b8c9fdc20925cdcb4c" />
-                  <option name="projectId" value="eub-management-31952" />
-                  <option name="projectNumber" value="497042725541" />
+                  <option name="appId" value="PLACEHOLDER" />
+                  <option name="mobileSdkAppId" value="" />
+                  <option name="projectId" value="" />
+                  <option name="projectNumber" value="" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

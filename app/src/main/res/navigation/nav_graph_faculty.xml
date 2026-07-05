@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/facultyListFragment"
-        android:name="com.polok.eubmanagement.presentation.faculty.facultylist.FacultyListFragment"
+        android:name="com.ismail.cu.presentation.faculty.facultylist.FacultyListFragment"
         android:label="Faculties"
         tools:layout="@layout/fragment_faculty_list">
         <action
@@ -28,13 +28,13 @@
 
     <fragment
         android:id="@+id/facultyAddFragment"
-        android:name="com.polok.eubmanagement.presentation.faculty.facultyadd.FacultyAddFragment"
+        android:name="com.ismail.cu.presentation.faculty.facultyadd.FacultyAddFragment"
         android:label="Add Faculty's Info"
         tools:layout="@layout/fragment_faculty_add" />
 
     <fragment
         android:id="@+id/facultyUpdateFragment"
-        android:name="com.polok.eubmanagement.presentation.faculty.facultyupdate.FacultyUpdateFragment"
+        android:name="com.ismail.cu.presentation.faculty.facultyupdate.FacultyUpdateFragment"
         android:label="Update Faculty's Info"
         tools:layout="@layout/fragment_faculty_update" />
 

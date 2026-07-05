@@ -110,7 +110,7 @@
                 tools:itemCount="3"
                 tools:listitem="@layout/item_notice_list" />
 
-            <com.polok.eubmanagement.widget.DashboardButton
+            <com.ismail.cu.widget.DashboardButton
                 android:id="@+id/class_schedule_button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -125,7 +125,7 @@
                 app:layout_goneMarginTop="@dimen/spacing_large_plus"
                 app:text="Class\nSchedule" />
 
-            <com.polok.eubmanagement.widget.DashboardButton
+            <com.ismail.cu.widget.DashboardButton
                 android:id="@+id/notice_button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -138,7 +138,7 @@
                 app:layout_constraintTop_toTopOf="@id/class_schedule_button"
                 app:text="Notice\n" />
 
-            <com.polok.eubmanagement.widget.DashboardButton
+            <com.ismail.cu.widget.DashboardButton
                 android:id="@+id/assignment_button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -151,7 +151,7 @@
                 app:layout_constraintTop_toTopOf="@id/notice_button"
                 app:text="Assignment\n" />
 
-            <com.polok.eubmanagement.widget.DashboardButton
+            <com.ismail.cu.widget.DashboardButton
                 android:id="@+id/course_module_button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -165,7 +165,7 @@
                 app:layout_constraintTop_toBottomOf="@id/class_schedule_button"
                 app:text="Course\nModule" />
 
-            <com.polok.eubmanagement.widget.DashboardButton
+            <com.ismail.cu.widget.DashboardButton
                 android:id="@+id/Student_portal_button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -178,7 +178,7 @@
                 app:layout_constraintTop_toTopOf="@id/course_module_button"
                 app:text="Student\nPortal" />
 
-            <com.polok.eubmanagement.widget.DashboardButton
+            <com.ismail.cu.widget.DashboardButton
                 android:id="@+id/faculty_button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -191,7 +191,7 @@
                 app:layout_constraintTop_toTopOf="@id/Student_portal_button"
                 app:text="Faculty\n" />
 
-            <com.polok.eubmanagement.widget.PrimaryLoader
+            <com.ismail.cu.widget.PrimaryLoader
                 android:id="@+id/primary_loader"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"

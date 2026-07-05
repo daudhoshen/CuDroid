@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/scheduleListFragment"
-        android:name="com.polok.eubmanagement.presentation.schedule.schedulelist.ScheduleListFragment"
+        android:name="com.ismail.cu.presentation.schedule.schedulelist.ScheduleListFragment"
         android:label="Class Schedules"
         tools:layout="@layout/fragment_schedule_list">
         <action
@@ -28,13 +28,13 @@
 
     <fragment
         android:id="@+id/scheduleAddFragment"
-        android:name="com.polok.eubmanagement.presentation.schedule.scheduleadd.ScheduleAddFragment"
+        android:name="com.ismail.cu.presentation.schedule.scheduleadd.ScheduleAddFragment"
         android:label="Add Class Schedule"
         tools:layout="@layout/fragment_schedule_add" />
 
     <fragment
         android:id="@+id/scheduleUpdateFragment"
-        android:name="com.polok.eubmanagement.presentation.schedule.scheduleupdate.ScheduleUpdateFragment"
+        android:name="com.ismail.cu.presentation.schedule.scheduleupdate.ScheduleUpdateFragment"
         android:label="Update Class Schedule"
         tools:layout="@layout/fragment_schedule_update" />
 

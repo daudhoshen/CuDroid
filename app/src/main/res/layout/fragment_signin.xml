@@ -81,7 +81,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/signIn_button" />
 
-    <com.polok.eubmanagement.widget.PrimaryLoader
+    <com.ismail.cu.widget.PrimaryLoader
         android:id="@+id/primary_loader"
         android:layout_width="match_parent"
         android:layout_height="0dp"

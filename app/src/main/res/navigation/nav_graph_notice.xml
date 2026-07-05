@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/noticeListFragment"
-        android:name="com.polok.eubmanagement.presentation.notice.noticelist.NoticeListFragment"
+        android:name="com.ismail.cu.presentation.notice.noticelist.NoticeListFragment"
         android:label="Notices"
         tools:layout="@layout/fragment_notice_list">
         <action
@@ -35,19 +35,19 @@
 
     <fragment
         android:id="@+id/noticeAddFragment"
-        android:name="com.polok.eubmanagement.presentation.notice.noticeadd.NoticeAddFragment"
+        android:name="com.ismail.cu.presentation.notice.noticeadd.NoticeAddFragment"
         android:label="Add Notice"
         tools:layout="@layout/fragment_notice_add" />
 
     <fragment
         android:id="@+id/noticeViewFragment"
-        android:name="com.polok.eubmanagement.presentation.notice.noticeview.NoticeViewFragment"
+        android:name="com.ismail.cu.presentation.notice.noticeview.NoticeViewFragment"
         android:label="Notice"
         tools:layout="@layout/fragment_notice_view" />
 
     <fragment
         android:id="@+id/noticeUpdateFragment"
-        android:name="com.polok.eubmanagement.presentation.notice.noticeupdate.NoticeUpdateFragment"
+        android:name="com.ismail.cu.presentation.notice.noticeupdate.NoticeUpdateFragment"
         android:label="Update Notice"
         tools:layout="@layout/fragment_notice_update" />
 

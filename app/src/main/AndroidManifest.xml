@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.polok.eubmanagement">
+    package="com.ismail.cu">
 
     <application
         android:name=".base.BaseApp"
@@ -12,7 +12,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.EubMenagement"
+        android:theme="@style/Theme.CuDroid"
         tools:targetApi="34">
 
         <activity
@@ -27,52 +27,52 @@
         <activity
             android:name=".presentation.auth.AuthActivity"
             android:exported="false"
-            android:theme="@style/Theme.EubMenagement" />
+            android:theme="@style/Theme.CuDroid" />
 
         <activity
             android:name=".presentation.dashboard.DashboardActivity"
             android:exported="false"
-            android:theme="@style/Theme.EubMenagement" />
+            android:theme="@style/Theme.CuDroid" />
 
         <activity
             android:name=".presentation.schedule.ScheduleActivity"
             android:exported="false"
-            android:theme="@style/Theme.EubMenagement" />
+            android:theme="@style/Theme.CuDroid" />
 
         <activity
             android:name=".presentation.notice.NoticeActivity"
             android:exported="false"
-            android:theme="@style/Theme.EubMenagement" />
+            android:theme="@style/Theme.CuDroid" />
 
         <activity
             android:name=".presentation.assignment.AssignmentActivity"
             android:exported="false"
-            android:theme="@style/Theme.EubMenagement" />
+            android:theme="@style/Theme.CuDroid" />
 
         <activity
             android:name=".presentation.module.ModuleActivity"
             android:exported="false"
-            android:theme="@style/Theme.EubMenagement" />
+            android:theme="@style/Theme.CuDroid" />
 
         <activity
             android:name=".presentation.portal.PortalActivity"
             android:exported="false"
-            android:theme="@style/Theme.EubMenagement" />
+            android:theme="@style/Theme.CuDroid" />
 
         <activity
             android:name=".presentation.faculty.FacultyActivity"
             android:exported="false"
-            android:theme="@style/Theme.EubMenagement" />
+            android:theme="@style/Theme.CuDroid" />
 
         <activity
             android:name=".presentation.classmatelist.ClassmateListActivity"
             android:exported="false"
-            android:theme="@style/Theme.EubMenagement" />
+            android:theme="@style/Theme.CuDroid" />
 
         <activity
             android:name=".presentation.dashboard.chat.ChatTextListActivity"
             android:exported="false"
-            android:theme="@style/Theme.EubMenagement" />
+            android:theme="@style/Theme.CuDroid" />
 
     </application>
 

@@ -215,7 +215,7 @@
         app:layout_constraintTop_toBottomOf="@id/blood_label"
         tools:text="A+" />
 
-    <com.polok.eubmanagement.widget.DashboardButton
+    <com.ismail.cu.widget.DashboardButton
         android:id="@+id/sign_out_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -228,7 +228,7 @@
         app:layout_constraintTop_toBottomOf="@id/blood"
         app:text="Sign out" />
 
-    <com.polok.eubmanagement.widget.DashboardButton
+    <com.ismail.cu.widget.DashboardButton
         android:id="@+id/class_mates_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

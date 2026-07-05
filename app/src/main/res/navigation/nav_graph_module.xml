@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/moduleListFragment"
-        android:name="com.polok.eubmanagement.presentation.module.modulelist.ModuleListFragment"
+        android:name="com.ismail.cu.presentation.module.modulelist.ModuleListFragment"
         android:label="Course Modules"
         tools:layout="@layout/fragment_module_list">
         <action
@@ -28,13 +28,13 @@
 
     <fragment
         android:id="@+id/moduleAddFragment"
-        android:name="com.polok.eubmanagement.presentation.module.moduleadd.ModuleAddFragment"
+        android:name="com.ismail.cu.presentation.module.moduleadd.ModuleAddFragment"
         android:label="Add Course Module"
         tools:layout="@layout/fragment_module_add" />
 
     <fragment
         android:id="@+id/moduleUpdateFragment"
-        android:name="com.polok.eubmanagement.presentation.module.moduleupdate.ModuleUpdateFragment"
+        android:name="com.ismail.cu.presentation.module.moduleupdate.ModuleUpdateFragment"
         android:label="Update Course Module"
         tools:layout="@layout/fragment_module_update" />
 
