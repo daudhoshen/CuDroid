@@ -41,10 +41,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.ismail.cu" />
+                  <option name="mobileSdkAppId" value="1:1022027778175:android:0c74a527b28488f957d74a" />
+                  <option name="projectId" value="cityunivercity-9bb4f" />
+                  <option name="projectNumber" value="1022027778175" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
