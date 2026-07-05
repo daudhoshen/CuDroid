@@ -1,89 +1,65 @@
 #########################
 ####### Versions ########
 #########################
-
 [versions]
-compileSdk = "36"
-minSdk = "23"
-targetSdk = "36"
+android-minSdk = "23"
+android-compileSdk = "37"
+android-targetSdk = "37"
+android-targetJvm = "17"
 
-plugin-ver = "9.2.1"
-kotlin-ver = "2.3.21"
-googleServices-ver = "4.4.4"
-firebaseBom-ver = "34.13.0"
-crashlyticsPlugin-ver = "3.0.7"
+agp = "9.2.1"
+googleServices = "4.5.0"
+firebaseBom = "34.15.0"
 
 ### androidx common
-ktx-ver = "1.18.0"
-appcompat-ver = "1.7.1"
+coreKtx = "1.19.0"
+appcompat = "1.7.1"
 constraintlayout-ver = "2.2.1"
-material-ver = "1.14.0"
-lifecycle-ver = "2.10.0"
-navigation-ver = "2.9.8"
+material = "1.14.0"
+lifecycle = "2.11.0"
+navigation = "2.9.8"
 
 gson-ver = "2.14.0"
-
 ### Coil
 coil-ver = "2.7.0"
 
 ##tests
-junit-ver = "4.13.2"
-junitExt-ver = "1.3.0"
-espressoCore-ver = "3.7.0"
+junit = "4.13.2"
+junitExt = "1.3.0"
+espressoCore = "3.7.0"
 
 #########################
 ####### Libraries #######
 #########################
-
 [libraries]
 ### androidx common dependencies
-androidx-coreKtx = { module = "androidx.core:core-ktx", version.ref = "ktx-ver" }
-androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat-ver" }
-android-material = { module = "com.google.android.material:material", version.ref = "material-ver" }
+androidx-coreKtx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+android-material = { module = "com.google.android.material:material", version.ref = "material" }
 androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout-ver" }
-androidx-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle-ver" }
-androidx-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle-ver" }
-androidx-navigation-fragment = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigation-ver" }
-androidx-navigation-runtime = { module = "androidx.navigation:navigation-runtime-ktx", version.ref = "navigation-ver" }
-androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigation-ver" }
-
-androidx-work-runtime = "androidx.work:work-runtime-ktx:2.11.2"
-androidx-legacySupport = "androidx.legacy:legacy-support-v4:1.0.0"
-
+androidx-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+androidx-navigation-runtime = { module = "androidx.navigation:navigation-runtime-ktx", version.ref = "navigation" }
+androidx-navigation-ui-ktx = { module = "androidx.navigation:navigation-ui-ktx", version.ref = "navigation" }
+androidx-navigation-fragment = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigation" }
 ### google gson converter
-gson = { module = "com.google.code.gson:gson", version.ref = "gson-ver"}
-
+gson = { module = "com.google.code.gson:gson", version.ref = "gson-ver" }
 ### firebase
-firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom-ver" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
 firebase-auth = { module = "com.google.firebase:firebase-auth" }
 firebase-database = { module = "com.google.firebase:firebase-database" }
-
 ### third party
 #coil
-coil = {module = "io.coil-kt:coil", version.ref = "coil-ver"}
+coil = { module = "io.coil-kt:coil", version.ref = "coil-ver" }
 
-### tests dependencies
-junit = { group = "junit", name = "junit", version.ref = "junit-ver" }
-androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitExt-ver" }
-androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore-ver" }
-
-#########################
-######## Bundles ########
-#########################
-
-[bundles]
-androidx-common-dependencies = ["androidx-coreKtx", "androidx-appcompat", "android-material", "androidx-constraintlayout", "androidx-lifecycle-runtime", "androidx-lifecycle-viewmodel", "androidx-navigation-fragment", "androidx-navigation-runtime", "androidx-navigation-ui-ktx"]
-androidx-test-dependencies = ["androidx-junit", "androidx-espresso-core"]
-
+# Sandbox Testing Configurations
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitExt" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 
 #########################
 ######## Plugins ########
 #########################
-
 [plugins]
-android-application = { id = "com.android.application", version.ref = "plugin-ver" }
-android-library = { id = "com.android.library", version.ref = "plugin-ver" }
-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin-ver" }
-androidx-navigationSafeArgs = { id = "androidx.navigation.safeargs", version.ref = "navigation-ver" }
-gms-googleServices = { id = "com.google.gms.google-services", version.ref = "googleServices-ver" }
-firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "crashlyticsPlugin-ver" }
+android-application = { id = "com.android.application", version.ref = "agp" }
+gms-googleServices = { id = "com.google.gms.google-services", version.ref = "googleServices" }

@@ -1,6 +1,6 @@
 plugins {
     id("com.android.application")
-    id("kotlin-parcelize")
+    //id("kotlin-parcelize")
     id("com.google.gms.google-services")
 }
 
@@ -18,6 +18,7 @@ android {
 
     buildTypes {
         release {
+            //noinspection NotShrinkingResources
             isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
@@ -28,17 +29,35 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.toVersion(libs.versions.android.targetJvm.get())
+        targetCompatibility = JavaVersion.toVersion(libs.versions.android.targetJvm.get())
     }
     buildFeatures {
         viewBinding = true
     }
 }
 
+kotlin {
+    compilerOptions {
+        jvmTarget.set(
+            org.jetbrains.kotlin.gradle.dsl.JvmTarget.fromTarget(
+                libs.versions.android.targetJvm.get()
+            )
+        )
+    }
+}
+
 dependencies {
     // androidx common dependencies
-    api(libs.bundles.androidx.common.dependencies)
+    api(libs.androidx.coreKtx)
+    api(libs.androidx.appcompat)
+    api(libs.android.material)
+    api(libs.androidx.constraintlayout)
+    api(libs.androidx.lifecycle.runtime)
+    api(libs.androidx.lifecycle.viewmodel)
+    api(libs.androidx.navigation.runtime)
+    api(libs.androidx.navigation.ui.ktx)
+    api(libs.androidx.navigation.fragment)
 
     // firebase
     implementation(platform(libs.firebase.bom))
@@ -47,8 +66,4 @@ dependencies {
 
     // gson
     implementation(libs.gson)
-
-    // tests dependencies
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.bundles.androidx.test.dependencies)
 }
