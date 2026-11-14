@@ -26,8 +26,8 @@ class SignInFragment : BaseFragment<FragmentSigninBinding>(
     override fun initOnViewCreated(
         savedInstanceState: Bundle?
     ) {
-        binding.emailInput.setText("mdismailmollah2002@gmail.com")
-        binding.passwordInput.setText("12345678")
+        /*binding.emailInput.setText("mdismailmollah2002@gmail.com")
+        binding.passwordInput.setText("12345678")*/
 
         binding.signInButton.setOnClickListener {
             viewModel.validateInputItemsAndExecuteSignup(
