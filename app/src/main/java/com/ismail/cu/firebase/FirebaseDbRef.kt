@@ -1,40 +1,43 @@
 package com.ismail.cu.firebase
 
 import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.ismail.cu.base.BaseApp
 import com.ismail.cu.util.SharedPref.getUserBatch
 
 object FirebaseDbRef {
+    private val firebaseDataRef: DatabaseReference
+        get() = FirebaseDatabase.getInstance().getReference()
 
     fun provideBatchRef(): DatabaseReference? {
-        return BaseApp.firebaseDataRef?.child("BATCH_REF")
+        return firebaseDataRef?.child("BATCH_REF")
     }
 
     fun provideStudentRef(): DatabaseReference? {
-        return BaseApp.firebaseDataRef?.child("STUDENT")?.child(getUserBatch())
+        return firebaseDataRef?.child("STUDENT")?.child(getUserBatch())
     }
 
     fun provideScheduleRef(): DatabaseReference? {
-        return BaseApp.firebaseDataRef?.child("SCHEDULE")?.child(getUserBatch())
+        return firebaseDataRef?.child("SCHEDULE")?.child(getUserBatch())
     }
 
     fun provideNoticeRef(): DatabaseReference? {
-        return BaseApp.firebaseDataRef?.child("NOTICE")?.child(getUserBatch())
+        return firebaseDataRef?.child("NOTICE")?.child(getUserBatch())
     }
 
     fun provideAssignmentRef(): DatabaseReference? {
-        return BaseApp.firebaseDataRef?.child("ASSIGNMENT")?.child(getUserBatch())
+        return firebaseDataRef?.child("ASSIGNMENT")?.child(getUserBatch())
     }
 
     fun provideModuleRef(): DatabaseReference? {
-        return BaseApp.firebaseDataRef?.child("MODULE")?.child(getUserBatch())
+        return firebaseDataRef?.child("MODULE")?.child(getUserBatch())
     }
 
     fun provideFacultyRef(): DatabaseReference? {
-        return BaseApp.firebaseDataRef?.child("FACULTY")?.child(getUserBatch())
+        return firebaseDataRef?.child("FACULTY")?.child(getUserBatch())
     }
 
     fun provideChatRef(): DatabaseReference? {
-        return BaseApp.firebaseDataRef?.child("CHAT")?.child(getUserBatch())
+        return firebaseDataRef?.child("CHAT")?.child(getUserBatch())
     }
 }

@@ -13,7 +13,7 @@ import com.ismail.cu.util.SharedPref
 import com.ismail.cu.widget.PrimaryLoader
 
 class ScheduleUpdateFragment : BaseFragment<FragmentScheduleUpdateBinding>(
-    viewBindingFactory = FragmentScheduleUpdateBinding::inflate
+    onInflate = FragmentScheduleUpdateBinding::inflate
 ) {
     private val viewModel: ScheduleUpdateViewModel by viewModels {
         ScheduleUpdateViewModel.Factory()
@@ -21,7 +21,7 @@ class ScheduleUpdateFragment : BaseFragment<FragmentScheduleUpdateBinding>(
 
     override fun initViewModel(): BaseViewModel = viewModel
 
-    override fun initOnCreateView(savedInstanceState: Bundle?) {
+    override fun initOnViewCreated(savedInstanceState: Bundle?) {
         val dayList = resources.getStringArray(R.array.day_spinner)
         viewModel.dayZero = dayList[0]
 

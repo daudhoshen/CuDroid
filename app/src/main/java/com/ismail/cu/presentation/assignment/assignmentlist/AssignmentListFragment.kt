@@ -12,7 +12,7 @@ import com.ismail.cu.util.makeVisible
 import com.ismail.cu.widget.PrimaryLoader
 
 class AssignmentListFragment : BaseFragment<FragmentAssignmentListBinding>(
-    viewBindingFactory = FragmentAssignmentListBinding::inflate
+    onInflate = FragmentAssignmentListBinding::inflate
 ) {
     private val viewModel: AssignmentListViewModel by viewModels {
         AssignmentListViewModel.Factory()
@@ -30,7 +30,7 @@ class AssignmentListFragment : BaseFragment<FragmentAssignmentListBinding>(
 
     override fun initViewModel(): BaseViewModel = viewModel
 
-    override fun initOnCreateView(savedInstanceState: Bundle?) {
+    override fun initOnViewCreated(savedInstanceState: Bundle?) {
 
         viewModel.fetchAssignmentListFromFirebase()
 

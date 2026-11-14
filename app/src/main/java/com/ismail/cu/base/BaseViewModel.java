@@ -9,13 +9,13 @@ import com.ismail.cu.base.event.NavigateEvent;
 
 public abstract class BaseViewModel extends ViewModel {
     private final MutableLiveData<Event<String>> messageEvent = new MutableLiveData<>();
-    public LiveData<Event<String>> getMessageEvent() {return messageEvent;}
+    public LiveData<Event<String>> getMessageEvent() { return messageEvent; }
 
     private final MutableLiveData<Event<Boolean>> loadingEvent = new MutableLiveData<>();
-    public LiveData<Event<Boolean>> getLoadingEvent() {return loadingEvent; }
+    public LiveData<Event<Boolean>> getLoadingEvent() { return loadingEvent; }
 
     private final MutableLiveData<Event<NavigateEvent>> navigateEvent = new MutableLiveData<>();
-    public LiveData<Event<NavigateEvent>> getNavigateEvent() {return navigateEvent; }
+    public LiveData<Event<NavigateEvent>> getNavigateEvent() { return navigateEvent; }
 
     protected void fireMessageEvent(String message) {
         if (message != null && !message.isEmpty()) messageEvent.postValue(new Event<>(message));

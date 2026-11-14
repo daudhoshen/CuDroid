@@ -12,7 +12,7 @@ import com.ismail.cu.util.SharedPref
 import com.ismail.cu.widget.PrimaryLoader
 
 class FacultyAddFragment : BaseFragment<FragmentFacultyAddBinding>(
-    viewBindingFactory = FragmentFacultyAddBinding::inflate
+    onInflate = FragmentFacultyAddBinding::inflate
 ) {
     private val viewModel: FacultyAddViewModel by viewModels {
         FacultyAddViewModel.Factory()
@@ -20,7 +20,7 @@ class FacultyAddFragment : BaseFragment<FragmentFacultyAddBinding>(
 
     override fun initViewModel(): BaseViewModel = viewModel
 
-    override fun initOnCreateView(savedInstanceState: Bundle?) {
+    override fun initOnViewCreated(savedInstanceState: Bundle?) {
 
         viewModel.genderZero = resources.getStringArray(R.array.gender_spinner)[0]
 

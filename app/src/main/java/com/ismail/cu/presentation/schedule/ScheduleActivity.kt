@@ -9,7 +9,7 @@ import com.ismail.cu.base.BaseActivity
 import com.ismail.cu.databinding.ActivityScheduleBinding
 
 class ScheduleActivity : BaseActivity<ActivityScheduleBinding>(
-    viewBindingFactory = ActivityScheduleBinding::inflate
+    onInflate = ActivityScheduleBinding::inflate
 ) {
     override fun initOnCreate(savedInstanceState: Bundle?) {
         try {

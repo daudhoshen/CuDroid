@@ -20,7 +20,11 @@ class HomeViewModel : BaseViewModel() {
     private val _noticeLiveData = MutableLiveData<List<NoticeData?>?>()
     val noticeLiveData: LiveData<List<NoticeData?>?> get() = _noticeLiveData
 
-    fun fetchUserProfileLiveData() {
+    init {
+        fetchUserProfileLiveData()
+    }
+
+    private fun fetchUserProfileLiveData() {
         try {
             _userProfileDataLiveData.postValue(SharedPref.getUserProfile())
         } catch (e: Exception) {

@@ -9,7 +9,7 @@ import com.ismail.cu.base.BaseActivity
 import com.ismail.cu.databinding.ActivityAssignmentBinding
 
 class AssignmentActivity : BaseActivity<ActivityAssignmentBinding>(
-    viewBindingFactory = ActivityAssignmentBinding::inflate
+    onInflate = ActivityAssignmentBinding::inflate
 ) {
     override fun initOnCreate(savedInstanceState: Bundle?) {
         try {

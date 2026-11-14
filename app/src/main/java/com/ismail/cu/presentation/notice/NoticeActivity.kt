@@ -9,7 +9,7 @@ import com.ismail.cu.base.BaseActivity
 import com.ismail.cu.databinding.ActivityNoticeBinding
 
 class NoticeActivity : BaseActivity<ActivityNoticeBinding>(
-    viewBindingFactory = ActivityNoticeBinding::inflate
+    onInflate = ActivityNoticeBinding::inflate
 ) {
     override fun initOnCreate(savedInstanceState: Bundle?) {
         try {

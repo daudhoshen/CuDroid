@@ -11,7 +11,7 @@ import com.ismail.cu.util.makeVisible
 import com.ismail.cu.util.showToast
 
 class ChatTextListActivity : BaseActivity<ActivityChatTextListBinding> (
-    viewBindingFactory = ActivityChatTextListBinding::inflate
+    onInflate = ActivityChatTextListBinding::inflate
 ) {
     private val viewModel: ChatTextListViewModel by viewModels {
         ChatTextListViewModel.Factory(

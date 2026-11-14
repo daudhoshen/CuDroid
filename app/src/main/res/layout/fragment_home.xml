@@ -31,7 +31,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="@dimen/spacing_large_super"
         android:layout_marginEnd="@dimen/spacing_semi_large"
         android:textColor="@color/color_white"
         android:textSize="@dimen/font_secondary"
@@ -189,7 +189,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/Student_portal_button"
                 app:layout_constraintTop_toTopOf="@id/Student_portal_button"
-                app:text="Faculty\n" />
+                app:text="Faculty\nTeachers Info" />
 
             <com.ismail.cu.widget.PrimaryLoader
                 android:id="@+id/primary_loader"

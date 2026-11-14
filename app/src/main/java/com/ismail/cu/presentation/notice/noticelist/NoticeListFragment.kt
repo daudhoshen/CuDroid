@@ -12,7 +12,7 @@ import com.ismail.cu.util.makeVisible
 import com.ismail.cu.widget.PrimaryLoader
 
 class NoticeListFragment : BaseFragment<FragmentNoticeListBinding>(
-    viewBindingFactory = FragmentNoticeListBinding::inflate
+    onInflate = FragmentNoticeListBinding::inflate
 ) {
     private val viewModel: NoticeListViewModel by viewModels {
         NoticeListViewModel.Factory()
@@ -30,7 +30,7 @@ class NoticeListFragment : BaseFragment<FragmentNoticeListBinding>(
 
     override fun initViewModel(): BaseViewModel = viewModel
 
-    override fun initOnCreateView(savedInstanceState: Bundle?) {
+    override fun initOnViewCreated(savedInstanceState: Bundle?) {
 
         viewModel.fetchNoticeListFromFirebase()
 

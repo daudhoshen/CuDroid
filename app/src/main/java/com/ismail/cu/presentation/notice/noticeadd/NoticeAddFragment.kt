@@ -9,7 +9,7 @@ import com.ismail.cu.util.SharedPref
 import com.ismail.cu.widget.PrimaryLoader
 
 class NoticeAddFragment : BaseFragment<FragmentNoticeAddBinding>(
-    viewBindingFactory = FragmentNoticeAddBinding::inflate
+    onInflate = FragmentNoticeAddBinding::inflate
 ) {
     private val viewModel: NoticeAddViewModel by viewModels {
         NoticeAddViewModel.Factory()
@@ -17,7 +17,7 @@ class NoticeAddFragment : BaseFragment<FragmentNoticeAddBinding>(
 
     override fun initViewModel(): BaseViewModel = viewModel
 
-    override fun initOnCreateView(savedInstanceState: Bundle?) {
+    override fun initOnViewCreated(savedInstanceState: Bundle?) {
 
         binding.saveButton.setOnClickListener {
             SharedPref.init(context)

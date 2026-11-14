@@ -10,7 +10,7 @@
         android:id="@+id/tool_bar"
         layout="@layout/primary_toolbar"/>
 
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_container"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"

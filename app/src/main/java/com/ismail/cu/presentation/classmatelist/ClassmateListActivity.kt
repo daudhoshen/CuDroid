@@ -15,7 +15,7 @@ import com.ismail.cu.util.makeVisible
 import com.ismail.cu.util.showToast
 
 class ClassmateListActivity : BaseActivity<ActivityClassmateListBinding>(
-    viewBindingFactory = ActivityClassmateListBinding::inflate
+    onInflate = ActivityClassmateListBinding::inflate
 ) {
     private val viewModel: ClassMateListViewModel by viewModels {
         ClassMateListViewModel.Factory(

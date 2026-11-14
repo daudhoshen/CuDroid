@@ -11,7 +11,7 @@ import com.ismail.cu.util.SharedPref
 import com.ismail.cu.widget.PrimaryLoader
 
 class ChatListFragment : BaseFragment<FragmentChatListBinding>(
-    viewBindingFactory = FragmentChatListBinding::inflate
+    onInflate = FragmentChatListBinding::inflate
 ) {
     private val viewModel: ChatListViewModel by viewModels {
         ChatListViewModel.Factory(
@@ -33,7 +33,7 @@ class ChatListFragment : BaseFragment<FragmentChatListBinding>(
 
     override fun initViewModel(): BaseViewModel = viewModel
 
-    override fun initOnCreateView(savedInstanceState: Bundle?) {
+    override fun initOnViewCreated(savedInstanceState: Bundle?) {
 
         viewModel.fetchChatListThatContainsMyId()
 

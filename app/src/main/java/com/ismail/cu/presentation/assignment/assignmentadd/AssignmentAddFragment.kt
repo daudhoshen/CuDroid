@@ -9,7 +9,7 @@ import com.ismail.cu.util.SharedPref
 import com.ismail.cu.widget.PrimaryLoader
 
 class AssignmentAddFragment : BaseFragment<FragmentAssignmentAddBinding>(
-    viewBindingFactory = FragmentAssignmentAddBinding::inflate
+    onInflate = FragmentAssignmentAddBinding::inflate
 ) {
     private val viewModel: AssignmentAddViewModel by viewModels {
         AssignmentAddViewModel.Factory()
@@ -17,7 +17,7 @@ class AssignmentAddFragment : BaseFragment<FragmentAssignmentAddBinding>(
 
     override fun initViewModel(): BaseViewModel = viewModel
 
-    override fun initOnCreateView(savedInstanceState: Bundle?) {
+    override fun initOnViewCreated(savedInstanceState: Bundle?) {
 
         binding.saveButton.setOnClickListener {
             SharedPref.init(context)

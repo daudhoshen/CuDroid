@@ -12,7 +12,7 @@ import com.ismail.cu.util.makeVisible
 import com.ismail.cu.widget.PrimaryLoader
 
 class ScheduleListFragment : BaseFragment<FragmentScheduleListBinding>(
-    viewBindingFactory = FragmentScheduleListBinding::inflate
+    onInflate = FragmentScheduleListBinding::inflate
 ) {
     private val viewModel: ScheduleListViewModel by viewModels {
         ScheduleListViewModel.Factory()
@@ -27,7 +27,7 @@ class ScheduleListFragment : BaseFragment<FragmentScheduleListBinding>(
 
     override fun initViewModel(): BaseViewModel = viewModel
 
-    override fun initOnCreateView(savedInstanceState: Bundle?) {
+    override fun initOnViewCreated(savedInstanceState: Bundle?) {
 
         viewModel.fetchScheduleListFromFirebase()
 

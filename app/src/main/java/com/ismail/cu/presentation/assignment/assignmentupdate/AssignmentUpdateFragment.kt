@@ -10,7 +10,7 @@ import com.ismail.cu.util.SharedPref
 import com.ismail.cu.widget.PrimaryLoader
 
 class AssignmentUpdateFragment : BaseFragment<FragmentAssignmentUpdateBinding>(
-    viewBindingFactory = FragmentAssignmentUpdateBinding::inflate
+    onInflate = FragmentAssignmentUpdateBinding::inflate
 ) {
     private val viewModel: AssignmentUpdateViewModel by viewModels {
         AssignmentUpdateViewModel.Factory()
@@ -18,7 +18,7 @@ class AssignmentUpdateFragment : BaseFragment<FragmentAssignmentUpdateBinding>(
 
     override fun initViewModel(): BaseViewModel = viewModel
 
-    override fun initOnCreateView(savedInstanceState: Bundle?) {
+    override fun initOnViewCreated(savedInstanceState: Bundle?) {
 
         binding.assignmentTitle.setText(arguments?.getString("title"))
         binding.assignmentDetails.setText(arguments?.getString("details"))

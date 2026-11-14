@@ -17,21 +17,25 @@ import com.ismail.cu.util.showErrorOnUi
 
 class SignInViewModel : BaseViewModel() {
     fun validateInputItemsAndExecuteSignup(
-        emailInputEt: EditText, passwordInputEt: EditText, firebaseAuth: FirebaseAuth
+        emailInputEt: EditText,
+        passwordInputEt: EditText,
+        firebaseAuth: FirebaseAuth
     ) {
         if (!Patterns.EMAIL_ADDRESS.matcher(emailInputEt.getText().toString()).matches()) {
             emailInputEt.showErrorOnUi("Enter A Valid Email Address")
             return
         }
-        if (passwordInputEt.getText().toString().isEmpty()
-            || passwordInputEt.getText().length < 6
+        if (
+            passwordInputEt.getText().toString().isEmpty() ||
+            passwordInputEt.getText().length < 6
         ) {
             passwordInputEt.showErrorOnUi("Enter at Least 6 Digit Password")
             return
         }
         attemptLoginUserToFirebase(
-            firebaseAuth,
-            emailInputEt.getText().toString(), passwordInputEt.getText().toString()
+            firebaseAuth = firebaseAuth,
+            emailInput = emailInputEt.getText().toString(),
+            passwordInput = passwordInputEt.getText().toString()
         )
     }
 
@@ -42,10 +46,15 @@ class SignInViewModel : BaseViewModel() {
     ) {
         fireLoadingEvent(true)
         firebaseAuth.signInWithEmailAndPassword(
-            emailInput, passwordInput
+            emailInput,
+            passwordInput
         ).addOnCompleteListener { task ->
             if (task.isSuccessful) {
-                firebaseAuth.currentUser?.uid?.let { attemptFetchUserBatchFromFirebase(it) }
+                firebaseAuth.currentUser?.uid?.let {
+                    attemptFetchUserBatchFromFirebase(
+                        firebaseUid = it
+                    )
+                }
             } else {
                 fireMessageEvent(task.exception!!.localizedMessage)
                 fireLoadingEvent(false)
@@ -53,14 +62,16 @@ class SignInViewModel : BaseViewModel() {
         }
     }
 
-    private fun attemptFetchUserBatchFromFirebase(firebaseUid: String) {
+    private fun attemptFetchUserBatchFromFirebase(
+        firebaseUid: String
+    ) {
         provideBatchRef()?.child(firebaseUid)?.addValueEventListener(
             object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.exists()) {
                         try {
                             SharedPref.saveUserBatch(
-                                snapshot.getValue(String::class.java)
+                                batch = snapshot.getValue(String::class.java)
                             )
                         } catch (_: Exception) {
                             fireMessageEvent("Something went wrong")
@@ -73,7 +84,6 @@ class SignInViewModel : BaseViewModel() {
                         fireLoadingEvent(false)
                     }
                 }
-
                 override fun onCancelled(error: DatabaseError) {
                     fireMessageEvent(error.message)
                     fireLoadingEvent(false)
@@ -82,14 +92,16 @@ class SignInViewModel : BaseViewModel() {
         )
     }
 
-    private fun attemptFetchUserProfileDataFrom(firebaseUid: String) {
+    private fun attemptFetchUserProfileDataFrom(
+        firebaseUid: String
+    ) {
         provideStudentRef()?.child(firebaseUid)?.addValueEventListener(
             object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.exists()) {
                         try {
                             SharedPref.saveUserProfile(
-                                snapshot.getValue(UserProfileData::class.java)
+                                userProfileData = snapshot.getValue(UserProfileData::class.java)
                             )
                         } catch (e: Exception) {
                             fireMessageEvent("Something went wrong")

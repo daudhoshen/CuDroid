@@ -13,7 +13,7 @@ import com.ismail.cu.util.SharedPref
 import com.ismail.cu.widget.PrimaryLoader
 
 class FacultyUpdateFragment : BaseFragment<FragmentFacultyUpdateBinding>(
-    viewBindingFactory = FragmentFacultyUpdateBinding::inflate
+    onInflate = FragmentFacultyUpdateBinding::inflate
 ) {
     private val viewModel: FacultyUpdateViewModel by viewModels {
         FacultyUpdateViewModel.Factory()
@@ -21,7 +21,7 @@ class FacultyUpdateFragment : BaseFragment<FragmentFacultyUpdateBinding>(
 
     override fun initViewModel(): BaseViewModel = viewModel
 
-    override fun initOnCreateView(savedInstanceState: Bundle?) {
+    override fun initOnViewCreated(savedInstanceState: Bundle?) {
 
         binding.facultyName.setText(arguments?.getString("name"))
         binding.facultyDesignation.setText(arguments?.getString("details"))

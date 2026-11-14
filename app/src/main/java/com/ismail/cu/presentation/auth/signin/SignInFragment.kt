@@ -12,9 +12,10 @@ import com.ismail.cu.databinding.FragmentSigninBinding
 import com.ismail.cu.presentation.dashboard.DashboardActivity
 import com.ismail.cu.util.SharedPref
 import com.ismail.cu.widget.PrimaryLoader
+import org.w3c.dom.Text
 
 class SignInFragment : BaseFragment<FragmentSigninBinding>(
-    viewBindingFactory = FragmentSigninBinding::inflate
+    onInflate = FragmentSigninBinding::inflate
 ) {
     private val viewModel: SignInViewModel by viewModels {
         SignInViewModel.Factory()
@@ -22,18 +23,22 @@ class SignInFragment : BaseFragment<FragmentSigninBinding>(
 
     override fun initViewModel(): BaseViewModel = viewModel
 
-    override fun initOnCreateView(savedInstanceState: Bundle?) {
+    override fun initOnViewCreated(
+        savedInstanceState: Bundle?
+    ) {
+        binding.emailInput.setText("mdismailmollah2002@gmail.com")
+        binding.passwordInput.setText("12345678")
 
         binding.signInButton.setOnClickListener {
-            SharedPref.init(context)
             viewModel.validateInputItemsAndExecuteSignup(
-                binding.emailInput, binding.passwordInput,
-                FirebaseAuth.getInstance()
+                emailInputEt = binding.emailInput,
+                passwordInputEt = binding.passwordInput,
+                firebaseAuth = FirebaseAuth.getInstance()
             )
         }
         binding.signUpButton.setOnClickListener {
             findNavController().navigate(
-                R.id.action_signInFragment_to_signupFragment
+                resId = R.id.action_signInFragment_to_signupFragment
             )
         }
     }

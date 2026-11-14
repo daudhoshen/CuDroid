@@ -8,7 +8,7 @@ import com.ismail.cu.databinding.FragmentNoticeViewBinding
 import com.ismail.cu.widget.PrimaryLoader
 
 class NoticeViewFragment : BaseFragment<FragmentNoticeViewBinding>(
-    viewBindingFactory = FragmentNoticeViewBinding::inflate
+    onInflate = FragmentNoticeViewBinding::inflate
 ) {
     private val viewModel: NoticeViewViewModel by viewModels {
         NoticeViewViewModel.Factory()
@@ -16,7 +16,7 @@ class NoticeViewFragment : BaseFragment<FragmentNoticeViewBinding>(
 
     override fun initViewModel(): BaseViewModel = viewModel
 
-    override fun initOnCreateView(savedInstanceState: Bundle?) {
+    override fun initOnViewCreated(savedInstanceState: Bundle?) {
 
         viewModel.fetchNoticeFromBundle(
             arguments?.getString("notice_data")

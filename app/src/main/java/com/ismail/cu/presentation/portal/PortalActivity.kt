@@ -1,15 +1,21 @@
 package com.ismail.cu.presentation.portal
 
 import android.annotation.SuppressLint
+import android.graphics.Bitmap
 import android.os.Bundle
+import android.webkit.WebResourceError
+import android.webkit.WebResourceRequest
 import android.webkit.WebSettings
+import android.webkit.WebView
 import android.webkit.WebViewClient
 import com.ismail.cu.R
 import com.ismail.cu.base.BaseActivity
 import com.ismail.cu.databinding.ActivityPortalBinding
+import com.ismail.cu.util.makeGone
+import com.ismail.cu.util.makeVisible
 
 class PortalActivity : BaseActivity<ActivityPortalBinding>(
-    viewBindingFactory = ActivityPortalBinding::inflate
+    onInflate = ActivityPortalBinding::inflate
 ) {
     @SuppressLint("SetJavaScriptEnabled")
     override fun initOnCreate(savedInstanceState: Bundle?) {
@@ -29,9 +35,35 @@ class PortalActivity : BaseActivity<ActivityPortalBinding>(
             settings.mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
             isVerticalScrollBarEnabled = true
             isHorizontalScrollBarEnabled = true
-
+            webViewClient = object : WebViewClient() {
+                override fun onPageStarted(
+                    view: WebView?,
+                    url: String?,
+                    favicon: Bitmap?
+                ) {
+                    super.onPageStarted(view, url, favicon)
+                    binding.primaryLoader.makeVisible()
+                }
+                override fun onPageFinished(
+                    view: WebView?,
+                    url: String?
+                ) {
+                    super.onPageFinished(view, url)
+                    binding.primaryLoader.makeGone()
+                }
+                override fun onReceivedError(
+                    view: WebView?,
+                    request: WebResourceRequest?,
+                    error: WebResourceError?
+                ) {
+                    super.onReceivedError(view, request, error)
+                    if (request?.isForMainFrame == true) {
+                        binding.primaryLoader.makeGone()
+                    }
+                }
+            }
             loadUrl(
-                "https://cityuniversity.orbund.com/einstein-freshair/touch/index.jsp"
+                "https://city.pipilikasoft.com/"
             )
         }
 

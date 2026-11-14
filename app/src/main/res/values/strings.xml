@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Smart CU</string>
+    <string name="app_name">CU ClassHub</string>
     <string name="dont_have_an_account_signup">Dont have an account? <u><b><font color="#389583">Sign up</font></b></u></string>
     <string-array name="gender_spinner">
         <item>Select Gender</item>

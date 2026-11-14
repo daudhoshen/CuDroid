@@ -13,7 +13,7 @@ import com.ismail.cu.util.SharedPref
 import com.ismail.cu.widget.PrimaryLoader
 
 class SignUpFragment : BaseFragment<FragmentSignupBinding>(
-    viewBindingFactory = FragmentSignupBinding::inflate
+    onInflate = FragmentSignupBinding::inflate
 ){
     private val viewModel: SignUpViewModel by viewModels {
         SignUpViewModel.Factory()
@@ -21,7 +21,7 @@ class SignUpFragment : BaseFragment<FragmentSignupBinding>(
 
     override fun initViewModel(): BaseViewModel = viewModel
 
-    override fun initOnCreateView(savedInstanceState: Bundle?) {
+    override fun initOnViewCreated(savedInstanceState: Bundle?) {
 
         binding.backButton.setOnClickListener {
             activity?.onBackPressedDispatcher?.onBackPressed()

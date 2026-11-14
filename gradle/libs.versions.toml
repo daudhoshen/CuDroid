@@ -2,7 +2,7 @@
 ####### Versions ########
 #########################
 [versions]
-android-minSdk = "23"
+android-minSdk = "24"
 android-compileSdk = "37"
 android-targetSdk = "37"
 android-targetJvm = "17"

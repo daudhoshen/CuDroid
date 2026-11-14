@@ -10,7 +10,7 @@ import com.ismail.cu.util.SharedPref
 import com.ismail.cu.widget.PrimaryLoader
 
 class ModuleUpdateFragment : BaseFragment<FragmentModuleUpdateBinding>(
-    viewBindingFactory = FragmentModuleUpdateBinding::inflate
+    onInflate = FragmentModuleUpdateBinding::inflate
 ) {
     private val viewModel: ModuleUpdateViewModel by viewModels {
         ModuleUpdateViewModel.Factory()
@@ -18,7 +18,7 @@ class ModuleUpdateFragment : BaseFragment<FragmentModuleUpdateBinding>(
 
     override fun initViewModel(): BaseViewModel = viewModel
 
-    override fun initOnCreateView(savedInstanceState: Bundle?) {
+    override fun initOnViewCreated(savedInstanceState: Bundle?) {
 
         binding.moduleTitle.setText(arguments?.getString("title"))
         binding.moduleLink.setText(arguments?.getString("link"))

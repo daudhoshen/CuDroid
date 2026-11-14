@@ -10,7 +10,7 @@ import com.ismail.cu.util.SharedPref
 import com.ismail.cu.widget.PrimaryLoader
 
 class NoticeUpdateFragment : BaseFragment<FragmentNoticeUpdateBinding>(
-    viewBindingFactory = FragmentNoticeUpdateBinding::inflate
+    onInflate = FragmentNoticeUpdateBinding::inflate
 ) {
     private val viewModel: NoticeUpdateViewModel by viewModels {
         NoticeUpdateViewModel.Factory()
@@ -18,7 +18,7 @@ class NoticeUpdateFragment : BaseFragment<FragmentNoticeUpdateBinding>(
 
     override fun initViewModel(): BaseViewModel = viewModel
 
-    override fun initOnCreateView(savedInstanceState: Bundle?) {
+    override fun initOnViewCreated(savedInstanceState: Bundle?) {
 
         binding.noticeTitle.setText(arguments?.getString("title"))
         binding.noticeDetails.setText(arguments?.getString("details"))

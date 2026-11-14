@@ -14,7 +14,7 @@ import com.ismail.cu.util.SharedPref
 import com.ismail.cu.widget.PrimaryLoader
 
 class ProfileFragment : BaseFragment<FragmentProfileBinding>(
-    viewBindingFactory = FragmentProfileBinding::inflate
+    onInflate = FragmentProfileBinding::inflate
 ) {
     private val viewModel: HomeViewModel by viewModels {
         HomeViewModel.Factory()
@@ -22,9 +22,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(
 
     override fun initViewModel(): BaseViewModel = viewModel
 
-    override fun initOnCreateView(savedInstanceState: Bundle?) {
-
-        viewModel.fetchUserProfileLiveData()
+    override fun initOnViewCreated(savedInstanceState: Bundle?) {
 
         viewModel.userProfileDataLiveData.observe(viewLifecycleOwner) {
             if (it != null) {

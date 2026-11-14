@@ -15,7 +15,7 @@ import com.ismail.cu.util.showToast
 import com.ismail.cu.widget.PrimaryLoader
 
 class FacultyListFragment : BaseFragment<FragmentFacultyListBinding>(
-    viewBindingFactory = FragmentFacultyListBinding::inflate
+    onInflate = FragmentFacultyListBinding::inflate
 ) {
     private val viewModel: FacultyListViewModel by viewModels {
         FacultyListViewModel.Factory()
@@ -43,7 +43,7 @@ class FacultyListFragment : BaseFragment<FragmentFacultyListBinding>(
 
     override fun initViewModel(): BaseViewModel = viewModel
 
-    override fun initOnCreateView(savedInstanceState: Bundle?) {
+    override fun initOnViewCreated(savedInstanceState: Bundle?) {
 
         viewModel.fetchFacultyListFromFirebase()
 

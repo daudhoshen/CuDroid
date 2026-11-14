@@ -10,7 +10,7 @@ import com.ismail.cu.util.getCurrentDate
 import com.ismail.cu.widget.PrimaryLoader
 
 class ModuleAddFragment : BaseFragment<FragmentModuleAddBinding>(
-    viewBindingFactory = FragmentModuleAddBinding::inflate
+    onInflate = FragmentModuleAddBinding::inflate
 ) {
     private val viewModel: ModuleAddViewModel by viewModels {
         ModuleAddViewModel.Factory()
@@ -18,7 +18,7 @@ class ModuleAddFragment : BaseFragment<FragmentModuleAddBinding>(
 
     override fun initViewModel(): BaseViewModel = viewModel
 
-    override fun initOnCreateView(savedInstanceState: Bundle?) {
+    override fun initOnViewCreated(savedInstanceState: Bundle?) {
 
         binding.saveButton.setOnClickListener {
             SharedPref.init(context)

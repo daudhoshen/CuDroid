@@ -4,25 +4,32 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
+//import androidx.navigation.NavController
 import androidx.viewbinding.ViewBinding
 import com.ismail.cu.util.SharedPref
+import com.ismail.cu.util.enableEdgeToEdgeXmlActivity
+import com.ismail.cu.util.setupSystemBarsAppearance
 
 abstract class BaseActivity<VB: ViewBinding>(
-    viewBindingFactory: (LayoutInflater) -> VB
+    private val onInflate: (LayoutInflater) -> VB
 ) : AppCompatActivity() {
-
-    protected val binding: VB by lazy {
-        viewBindingFactory(layoutInflater)
-    }
-    protected var navController: NavController? = null
+    protected lateinit var binding: VB
+        private set
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         /*window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
         if (Build.VERSION.SDK_INT < 30) window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
         else window?.setDecorFitsSystemWindows(true)*/
+        enableEdgeToEdgeXmlActivity(
+            reserveNavInset = true
+        )
+        setupSystemBarsAppearance(
+            isLightSystemBars = true
+        )
+        binding = onInflate(layoutInflater)
         setContentView(binding.root)
-        SharedPref.init(this)
+        SharedPref.init(context = this)
         initOnCreate(savedInstanceState)
     }
 

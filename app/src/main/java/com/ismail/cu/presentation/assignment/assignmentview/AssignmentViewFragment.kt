@@ -8,7 +8,7 @@ import com.ismail.cu.databinding.FragmentAssignmentViewBinding
 import com.ismail.cu.widget.PrimaryLoader
 
 class AssignmentViewFragment : BaseFragment<FragmentAssignmentViewBinding>(
-    viewBindingFactory = FragmentAssignmentViewBinding::inflate
+    onInflate = FragmentAssignmentViewBinding::inflate
 ) {
     private val viewModel: AssignmentViewViewModel by viewModels {
         AssignmentViewViewModel.Factory()
@@ -16,7 +16,7 @@ class AssignmentViewFragment : BaseFragment<FragmentAssignmentViewBinding>(
 
     override fun initViewModel(): BaseViewModel = viewModel
 
-    override fun initOnCreateView(savedInstanceState: Bundle?) {
+    override fun initOnViewCreated(savedInstanceState: Bundle?) {
 
         viewModel.fetchAssignmentFromBundle(arguments?.getString("assignment_data"))
 

@@ -18,7 +18,7 @@ import com.ismail.cu.util.makeVisible
 import com.ismail.cu.widget.PrimaryLoader
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(
-    viewBindingFactory = FragmentHomeBinding::inflate
+    onInflate = FragmentHomeBinding::inflate
 ) {
     private val viewModel: HomeViewModel by viewModels {
         HomeViewModel.Factory()
@@ -26,9 +26,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(
 
     override fun initViewModel(): BaseViewModel = viewModel
 
-    override fun initOnCreateView(savedInstanceState: Bundle?) {
+    override fun initOnViewCreated(savedInstanceState: Bundle?) {
 
-        viewModel.fetchUserProfileLiveData()
         viewModel.fetchNoticeListFromFirebase()
 
         viewModel.userProfileDataLiveData.observe(viewLifecycleOwner) {
