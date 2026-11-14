@@ -48,8 +48,14 @@ class SignInFragment : BaseFragment<FragmentSigninBinding>(
     override fun onNavigateEvent(id: Int, bundle: Bundle?) {
         super.onNavigateEvent(id, bundle)
         if (id == 0) {
-            startActivity(Intent(context, DashboardActivity::class.java))
-            activity?.finish()
+            startActivity(
+                Intent(
+                    context,
+                    DashboardActivity::class.java
+                ).apply {
+                    flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                }
+            )
         }
     }
 }
