@@ -1,6 +1,7 @@
 package com.ismail.cu.presentation
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -15,7 +16,14 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         window?.decorView?.postDelayed({
-            startActivity(Intent(this, AuthActivity::class.java))
+            startActivity(
+                Intent(
+                    this,
+                    AuthActivity::class.java
+                ).apply {
+                    flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                }
+            )
             finish()
         }, 2000)
     }

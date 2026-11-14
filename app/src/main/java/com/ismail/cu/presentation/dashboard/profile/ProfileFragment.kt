@@ -23,7 +23,6 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(
     override fun initViewModel(): BaseViewModel = viewModel
 
     override fun initOnViewCreated(savedInstanceState: Bundle?) {
-
         viewModel.userProfileDataLiveData.observe(viewLifecycleOwner) {
             if (it != null) {
                 binding.userInfo.text = String.format(
@@ -42,7 +41,7 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(
             viewModel.attemptSignOutUser(FirebaseAuth.getInstance())
         }
         binding.classMatesButton.setOnClickListener {
-            viewModel.fireNavigateEvent(1,null)
+            viewModel.fireNavigateEvent(0,null)
         }
     }
 
@@ -51,13 +50,23 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>(
     override fun onNavigateEvent(id: Int, bundle: Bundle?) {
         super.onNavigateEvent(id, bundle)
         when (id) {
-            0 -> {
-                startActivity(Intent(requireContext(), AuthActivity::class.java))
-                requireActivity().finish()
+            -1 -> {
+                startActivity(
+                    Intent(
+                        requireContext(),
+                        AuthActivity::class.java
+                    ).apply {
+                        flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    }
+                )
             }
-
-            1 -> {
-                startActivity(Intent(requireContext(), ClassmateListActivity::class.java))
+            0 -> {
+                startActivity(
+                    Intent(
+                        requireContext(),
+                        ClassmateListActivity::class.java
+                    )
+                )
             }
         }
     }

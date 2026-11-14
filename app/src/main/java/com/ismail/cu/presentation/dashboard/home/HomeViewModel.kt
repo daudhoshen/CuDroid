@@ -82,7 +82,7 @@ class HomeViewModel : BaseViewModel() {
         } catch (exception: Exception) {
             fireMessageEvent(exception.localizedMessage)
         } finally {
-            fireNavigateEvent(0, null)
+            fireNavigateEvent(-1, null)
             fireLoadingEvent(false)
         }
     }
