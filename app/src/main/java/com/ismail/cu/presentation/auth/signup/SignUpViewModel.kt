@@ -86,7 +86,11 @@ class SignUpViewModel : BaseViewModel() {
                 if (task.isSuccessful) {
                     firebaseAuth.currentUser?.uid?.let {
                         attemptPostUserBatchToFirebase(
-                            it, studentId, fullName, mobileInput, emailInput
+                            firebaseUid = it,
+                            studentId = studentId,
+                            fullName = fullName,
+                            mobileInput = mobileInput,
+                            emailInput = emailInput
                         )
                     }
                 } else {

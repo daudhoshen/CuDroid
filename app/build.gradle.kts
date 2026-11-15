@@ -1,6 +1,5 @@
 plugins {
     id("com.android.application")
-    //id("kotlin-parcelize")
     id("com.google.gms.google-services")
 }
 
@@ -51,15 +50,15 @@ kotlin {
 
 dependencies {
     // androidx common dependencies
-    api(libs.androidx.coreKtx)
-    api(libs.androidx.appcompat)
-    api(libs.android.material)
-    api(libs.androidx.constraintlayout)
-    api(libs.androidx.lifecycle.runtime)
-    api(libs.androidx.lifecycle.viewmodel)
-    api(libs.androidx.navigation.runtime)
-    api(libs.androidx.navigation.ui.ktx)
-    api(libs.androidx.navigation.fragment)
+    implementation(libs.androidx.coreKtx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.android.material)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.lifecycle.runtime)
+    implementation(libs.androidx.lifecycle.viewmodel)
+    implementation(libs.androidx.navigation.runtime)
+    implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.navigation.fragment)
 
     // firebase
     implementation(platform(libs.firebase.bom))
