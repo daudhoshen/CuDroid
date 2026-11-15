@@ -62,11 +62,7 @@ private fun Window.enableEdgeToEdgeWindow(
                     WindowInsets.Type.systemBars() or
                             WindowInsets.Type.displayCutout()
                 ).bottom else 0
-                val systemBarsBottomHeight = navInset.coerceAtLeast(0)
-                val imeInset = if (reserveImeInset) insets.getInsets(
-                    WindowInsets.Type.ime()
-                ).bottom else 0
-                view.updatePadding(bottom = (systemBarsBottomHeight + imeInset).coerceAtLeast(0))
+                view.updatePadding(bottom = navInset.coerceAtLeast(0))
             }.getOrElse {
                 Log.e(
                     "WindowInsets",
@@ -89,11 +85,7 @@ private fun Window.enableEdgeToEdgeWindow(
                     WindowInsetsCompat.Type.systemBars() or
                             WindowInsetsCompat.Type.displayCutout()
                 ).bottom else 0
-                val systemBarsBottomHeight = navInset.coerceAtLeast(0)
-                val imeInset = if (reserveImeInset) insets.getInsets(
-                    WindowInsetsCompat.Type.ime()
-                ).bottom else 0
-                view.updatePadding(bottom = (systemBarsBottomHeight + imeInset).coerceAtLeast(0))
+                view.updatePadding(bottom = navInset.coerceAtLeast(0))
             }.getOrElse {
                 Log.e(
                     "WindowInsets",
