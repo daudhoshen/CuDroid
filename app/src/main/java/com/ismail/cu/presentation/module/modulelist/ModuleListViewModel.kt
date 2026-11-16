@@ -14,8 +14,8 @@ import com.ismail.cu.model.ModuleData
 import com.ismail.cu.presentation.module.moduleupdate.ModuleUpdateFragment
 
 class ModuleListViewModel : BaseViewModel() {
-    private val _moduleLiveData = MutableLiveData<List<ModuleData?>?>()
-    val moduleLiveData: LiveData<List<ModuleData?>?> get() = _moduleLiveData
+    val moduleLiveData: LiveData<List<ModuleData?>?>
+        field = MutableLiveData<List<ModuleData?>?>()
 
     fun fetchModuleListFromFirebase() {
         fireLoadingEvent(true)
@@ -36,7 +36,7 @@ class ModuleListViewModel : BaseViewModel() {
                         } catch (e: Exception) {
                             e.printStackTrace()
                         } finally {
-                            _moduleLiveData.postValue(moduleList)
+                            moduleLiveData.postValue(moduleList)
                         }
                         fireLoadingEvent(false)
                     } else fireLoadingEvent(false)

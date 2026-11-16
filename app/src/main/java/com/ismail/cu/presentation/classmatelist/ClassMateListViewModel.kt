@@ -14,8 +14,8 @@ import com.ismail.cu.model.UserProfileData
 class ClassMateListViewModel(
     private val ownUserId: String?
 ) : BaseViewModel() {
-    private val _classMateLiveData = MutableLiveData<List<UserProfileData?>?>()
-    val classMateLiveData: LiveData<List<UserProfileData?>?> get() = _classMateLiveData
+    val classMateLiveData: LiveData<List<UserProfileData?>?>
+        field = MutableLiveData<List<UserProfileData?>?>()
 
     fun fetchClassMateListFromFirebase() {
         fireLoadingEvent(true)
@@ -36,7 +36,7 @@ class ClassMateListViewModel(
                         } catch (e: Exception) {
                             e.printStackTrace()
                         } finally {
-                            _classMateLiveData.postValue(classMateList)
+                            classMateLiveData.postValue(classMateList)
                         }
                         fireLoadingEvent(false)
                     } else fireLoadingEvent(false)

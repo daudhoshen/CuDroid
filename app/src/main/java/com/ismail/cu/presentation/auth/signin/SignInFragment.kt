@@ -10,9 +10,7 @@ import com.ismail.cu.base.BaseFragment
 import com.ismail.cu.base.BaseViewModel
 import com.ismail.cu.databinding.FragmentSigninBinding
 import com.ismail.cu.presentation.dashboard.DashboardActivity
-import com.ismail.cu.util.SharedPref
 import com.ismail.cu.widget.PrimaryLoader
-import org.w3c.dom.Text
 
 class SignInFragment : BaseFragment<FragmentSigninBinding>(
     onInflate = FragmentSigninBinding::inflate
@@ -26,8 +24,8 @@ class SignInFragment : BaseFragment<FragmentSigninBinding>(
     override fun initOnViewCreated(
         savedInstanceState: Bundle?
     ) {
-        /*binding.emailInput.setText("mdismailmollah2002@gmail.com")
-        binding.passwordInput.setText("12345678")*/
+        binding.emailInput.setText("mdismailmollah2002@gmail.com")
+        binding.passwordInput.setText("12345678")
 
         binding.signInButton.setOnClickListener {
             viewModel.validateInputItemsAndExecuteSignup(

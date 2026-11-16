@@ -10,7 +10,10 @@ tasks.register<Delete>("clean") {
 
 subprojects {
     afterEvaluate {
-        if (plugins.hasPlugin("com.android.application") || plugins.hasPlugin("com.android.library")) {
+        if (
+            plugins.hasPlugin("com.android.application") ||
+            plugins.hasPlugin("com.android.library")
+        ) {
             dependencies {
                 // Local Unit Test Sandboxes
                 "testImplementation"(libs.junit)

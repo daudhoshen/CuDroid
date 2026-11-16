@@ -15,10 +15,10 @@ import com.ismail.cu.model.UserProfileData
 import com.ismail.cu.util.SharedPref
 
 class HomeViewModel : BaseViewModel() {
-    private val _userProfileDataLiveData = MutableLiveData<UserProfileData?>()
-    val userProfileDataLiveData: LiveData<UserProfileData?> get() = _userProfileDataLiveData
-    private val _noticeLiveData = MutableLiveData<List<NoticeData?>?>()
-    val noticeLiveData: LiveData<List<NoticeData?>?> get() = _noticeLiveData
+    val userProfileDataLiveData: LiveData<UserProfileData?>
+        field = MutableLiveData<UserProfileData?>()
+    val noticeLiveData: LiveData<List<NoticeData?>?>
+        field = MutableLiveData<List<NoticeData?>?>()
 
     init {
         fetchUserProfileLiveData()
@@ -26,7 +26,7 @@ class HomeViewModel : BaseViewModel() {
 
     private fun fetchUserProfileLiveData() {
         try {
-            _userProfileDataLiveData.postValue(SharedPref.getUserProfile())
+            userProfileDataLiveData.postValue(SharedPref.getUserProfile())
         } catch (e: Exception) {
             fireMessageEvent(e.localizedMessage)
         }
@@ -59,7 +59,7 @@ class HomeViewModel : BaseViewModel() {
                                     itemCount++
                                 } else break
                             }
-                            _noticeLiveData.postValue(newList)
+                            noticeLiveData.postValue(newList)
                             fireLoadingEvent(false)
                         }
                     } else {

@@ -40,6 +40,7 @@ android {
 
 kotlin {
     compilerOptions {
+        freeCompilerArgs.add("-XXLanguage:+ExplicitBackingFields")
         jvmTarget.set(
             org.jetbrains.kotlin.gradle.dsl.JvmTarget.fromTarget(
                 libs.versions.android.targetJvm.get()

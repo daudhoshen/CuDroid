@@ -22,7 +22,7 @@ class ChatTextListActivity : BaseActivity<ActivityChatTextListBinding> (
     override fun initOnCreate(savedInstanceState: Bundle?) {
         binding.toolBar.title.text = intent?.getStringExtra(CLIENT_NAME) ?: ""
 
-        viewModel.loadingEvent?.observe(this, EventObserver {
+        viewModel.loadingEvent.observe(this, EventObserver {
             if (it) binding.primaryLoader.makeVisible()
             else binding.primaryLoader.makeGone()
         })
@@ -45,7 +45,7 @@ class ChatTextListActivity : BaseActivity<ActivityChatTextListBinding> (
             )
         }
 
-        viewModel.messageEvent?.observe(this, EventObserver {
+        viewModel.messageEvent.observe(this, EventObserver {
             if (it.isNotEmpty()) showToast(it)
         })
 

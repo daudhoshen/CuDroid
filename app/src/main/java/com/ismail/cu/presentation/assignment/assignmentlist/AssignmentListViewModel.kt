@@ -16,9 +16,8 @@ import com.ismail.cu.model.AssignmentData
 import com.ismail.cu.presentation.assignment.assignmentupdate.AssignmentUpdateFragment
 
 class AssignmentListViewModel : BaseViewModel() {
-
-    private val _assignmentLiveData = MutableLiveData<List<AssignmentData?>>()
-    val assignmentLiveData: LiveData<List<AssignmentData?>> get() = _assignmentLiveData
+    val assignmentLiveData: LiveData<List<AssignmentData?>>
+        field = MutableLiveData<List<AssignmentData?>>()
 
     fun fetchAssignmentListFromFirebase() {
         fireLoadingEvent(true)
@@ -34,7 +33,7 @@ class AssignmentListViewModel : BaseViewModel() {
                                 )
                             )
                         }
-                        _assignmentLiveData.postValue(assignmentList)
+                        assignmentLiveData.postValue(assignmentList)
                         fireLoadingEvent(false)
                     } else fireLoadingEvent(false)
                 }

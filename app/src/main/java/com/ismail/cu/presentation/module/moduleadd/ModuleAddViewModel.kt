@@ -16,16 +16,16 @@ class ModuleAddViewModel : BaseViewModel() {
         moduleLinkEt: EditText,
         createdAt: String
     ) {
-        if (moduleTitleEt.getText().toString().isEmpty()) {
+        if (moduleTitleEt.text.toString().isEmpty()) {
             moduleTitleEt.showErrorOnUi("Enter Course Module Title")
             return
         }
-        if (moduleLinkEt.getText().toString().isEmpty()) {
+        if (moduleLinkEt.text.toString().isEmpty()) {
             moduleLinkEt.showErrorOnUi("Enter Course Module Link")
             return
         }
         uploadModuleTOFirebase(
-            moduleTitleEt.getText().toString(), moduleLinkEt.getText().toString(), createdAt
+            moduleTitleEt.text.toString(), moduleLinkEt.text.toString(), createdAt
         )
     }
 

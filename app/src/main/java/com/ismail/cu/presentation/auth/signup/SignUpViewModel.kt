@@ -28,24 +28,24 @@ class SignUpViewModel : BaseViewModel() {
         passwordInputEt: EditText,
         firebaseAuth: FirebaseAuth
     ) {
-        if (studentIdEt.getText().toString().isEmpty()) {
+        if (studentIdEt.text.toString().isEmpty()) {
             studentIdEt.showErrorOnUi("Enter Student ID")
             return
         }
-        if (fullNameEt.getText().toString().isEmpty()) {
+        if (fullNameEt.text.toString().isEmpty()) {
             fullNameEt.showErrorOnUi("Enter Full Name")
             return
         }
-        if (mobileInputEt.getText().toString().isEmpty()) {
+        if (mobileInputEt.text.toString().isEmpty()) {
             mobileInputEt.showErrorOnUi("Enter Mobile Number")
             return
         }
-        if (!Patterns.EMAIL_ADDRESS.matcher(emailInputEt.getText().toString()).matches()) {
+        if (!Patterns.EMAIL_ADDRESS.matcher(emailInputEt.text.toString()).matches()) {
             emailInputEt.showErrorOnUi("Enter A Valid Email Address")
             return
         }
         if (
-            passwordInputEt.getText().toString().isEmpty() || passwordInputEt.getText().length < 6
+            passwordInputEt.text.toString().isEmpty() || passwordInputEt.text.length < 6
         ) {
             passwordInputEt.showErrorOnUi("Enter at Least 6 Digit Password")
             return

@@ -9,7 +9,8 @@ import com.ismail.cu.base.BaseActivity
 import com.ismail.cu.databinding.ActivityDashboardBinding
 
 class DashboardActivity : BaseActivity<ActivityDashboardBinding>(
-    onInflate = ActivityDashboardBinding::inflate
+    onInflate = ActivityDashboardBinding::inflate,
+    reserveNavInset = false
 ) {
     override fun initOnCreate(savedInstanceState: Bundle?) {
         setupWithNavController(

@@ -15,8 +15,8 @@ import com.ismail.cu.model.UserProfileData
 class ChatListViewModel(
     private val ownUserId: String?
 ) : BaseViewModel() {
-    private val _chatsLiveData = MutableLiveData<List<UserProfileData?>?>()
-    val chatsLiveData: LiveData<List<UserProfileData?>?> get() = _chatsLiveData
+    val chatsLiveData: LiveData<List<UserProfileData?>?>
+        field = MutableLiveData<List<UserProfileData?>?>()
 
     fun fetchChatListThatContainsMyId() {
         fireLoadingEvent(true)
@@ -58,7 +58,7 @@ class ChatListViewModel(
                     if (profileSnapshot.exists()) {
                         profileSnapshot.getValue(UserProfileData::class.java)?.also { value ->
                            if (value.userId?.isNotEmpty() == true) {
-                               _chatsLiveData.postValue(
+                               chatsLiveData.postValue(
                                    chatList?.apply { add(value) }?.reversed()
                                )
                            }

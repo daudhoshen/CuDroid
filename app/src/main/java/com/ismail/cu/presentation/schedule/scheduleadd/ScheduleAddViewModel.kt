@@ -24,32 +24,32 @@ class ScheduleAddViewModel : BaseViewModel() {
             fireMessageEvent(dayZero)
             return
         }
-        if (courseTitleEt.getText().toString().isEmpty()) {
+        if (courseTitleEt.text.toString().isEmpty()) {
             courseTitleEt.showErrorOnUi("Enter Course Title")
             return
         }
-        if (courseCodeEt.getText().toString().isEmpty()) {
+        if (courseCodeEt.text.toString().isEmpty()) {
             courseCodeEt.showErrorOnUi("Enter Course Code")
             return
         }
-        if (lecturerNameEt.getText().toString().isEmpty()) {
+        if (lecturerNameEt.text.toString().isEmpty()) {
             lecturerNameEt.showErrorOnUi("Enter Lecturer Name")
             return
         }
-        if (startEndTimeEt.getText().toString().isEmpty()) {
+        if (startEndTimeEt.text.toString().isEmpty()) {
             startEndTimeEt.showErrorOnUi("Enter Start to End Time")
             return
         }
-        if (roomNoEt.getText().toString().isEmpty()) {
+        if (roomNoEt.text.toString().isEmpty()) {
             roomNoEt.showErrorOnUi("Enter Room Number")
             return
         }
         uploadScheduleTOFirebase(
-            day, courseTitleEt.getText().toString(),
-            courseCodeEt.getText().toString(),
-            lecturerNameEt.getText().toString(),
-            startEndTimeEt.getText().toString(),
-            roomNoEt.getText().toString()
+            day, courseTitleEt.text.toString(),
+            courseCodeEt.text.toString(),
+            lecturerNameEt.text.toString(),
+            startEndTimeEt.text.toString(),
+            roomNoEt.text.toString()
         )
     }
 

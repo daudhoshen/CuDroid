@@ -14,8 +14,8 @@ import com.ismail.cu.model.ScheduleData
 import com.ismail.cu.presentation.schedule.scheduleupdate.ScheduleUpdateFragment
 
 class ScheduleListViewModel : BaseViewModel() {
-    private val _scheduleLiveData = MutableLiveData<List<ScheduleData?>?>()
-    val scheduleLiveData: LiveData<List<ScheduleData?>?> get() = _scheduleLiveData
+    val scheduleLiveData: LiveData<List<ScheduleData?>?>
+        field = MutableLiveData<List<ScheduleData?>?>()
 
     fun fetchScheduleListFromFirebase() {
         fireLoadingEvent(true)
@@ -35,7 +35,7 @@ class ScheduleListViewModel : BaseViewModel() {
                             fireMessageEvent("Something went wrong")
                             e.printStackTrace()
                         } finally {
-                            _scheduleLiveData.postValue(noticeList)
+                            scheduleLiveData.postValue(noticeList)
                         }
                         fireLoadingEvent(false)
                     } else fireLoadingEvent(false)

@@ -9,12 +9,12 @@ import com.ismail.cu.base.BaseViewModel
 import com.ismail.cu.model.NoticeData
 
 class NoticeViewViewModel : BaseViewModel() {
-    private val _noticeLiveData = MutableLiveData<NoticeData?>()
-    val noticeLiveData: LiveData<NoticeData?> get() = _noticeLiveData
+    val noticeLiveData: LiveData<NoticeData?>
+        field = MutableLiveData<NoticeData?>()
 
     fun fetchNoticeFromBundle(bundle: String?) {
         try {
-            _noticeLiveData.postValue(
+            noticeLiveData.postValue(
                 Gson().fromJson(bundle, NoticeData::class.java)
             )
         } catch (e: Exception) {

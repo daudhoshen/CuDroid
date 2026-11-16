@@ -7,19 +7,19 @@ android-compileSdk = "37"
 android-targetSdk = "37"
 android-targetJvm = "17"
 
-agp = "9.2.1"
-googleServices = "4.5.0"
+agp = "9.5.1"
+googleServices = "4.6.0"
 firebaseBom = "34.15.0"
 
 ### androidx common
-coreKtx = "1.19.0"
-appcompat = "1.7.1"
-constraintlayout-ver = "2.2.1"
+coreKtx = "1.19.1"
+appcompat = "1.8.0"
+constraintlayout-ver = "2.2.2"
 material = "1.14.0"
 lifecycle = "2.11.0"
-navigation = "2.9.8"
+navigation = "2.10.2"
 
-gson-ver = "2.14.0"
+gson-ver = "2.15.0"
 ### Coil
 coil-ver = "2.7.0"
 

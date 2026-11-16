@@ -16,8 +16,8 @@ import com.ismail.cu.model.ChatTextData
 class ChatTextListViewModel(
     val ownUserId: String?
 ) : BaseViewModel() {
-    private val _chatTextLiveData = MutableLiveData<List<ChatTextData?>?>()
-    val chatTextLiveData: LiveData<List<ChatTextData?>?> get() = _chatTextLiveData
+    val chatTextLiveData: LiveData<List<ChatTextData?>?>
+        field = MutableLiveData<List<ChatTextData?>?>()
 
     fun validateIdsAndFetchChatTextListFromFirebase(clientUserId: String?) {
         fireLoadingEvent(true)
@@ -59,7 +59,7 @@ class ChatTextListViewModel(
                                 )
                             }
                         }
-                        _chatTextLiveData.postValue(chatTextList)
+                        chatTextLiveData.postValue(chatTextList)
                         fireLoadingEvent(false)
                     } else {
                         fireLoadingEvent(false)

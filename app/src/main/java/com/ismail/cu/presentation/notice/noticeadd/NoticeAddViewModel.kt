@@ -15,17 +15,17 @@ class NoticeAddViewModel : BaseViewModel() {
     fun validateNoticeInputAndUploadToFirebase(
         noticeTitleEt: EditText, noticeDetailsEt: EditText
     ) {
-        if (noticeTitleEt.getText().toString().isEmpty()) {
+        if (noticeTitleEt.text.toString().isEmpty()) {
             noticeTitleEt.showErrorOnUi("Enter Notice Title")
             return
         }
-        if (noticeDetailsEt.getText().toString().isEmpty()) {
+        if (noticeDetailsEt.text.toString().isEmpty()) {
             noticeDetailsEt.showErrorOnUi("Enter Notice Details")
             return
         }
         uploadNoticeTOFirebase(
-            noticeTitleEt.getText().toString(),
-            noticeDetailsEt.getText().toString(),
+            noticeTitleEt.text.toString(),
+            noticeDetailsEt.text.toString(),
             getCurrentDate()
         )
     }

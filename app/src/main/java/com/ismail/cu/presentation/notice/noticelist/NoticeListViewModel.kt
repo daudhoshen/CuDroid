@@ -16,8 +16,8 @@ import com.ismail.cu.model.NoticeData
 import com.ismail.cu.presentation.notice.noticeupdate.NoticeUpdateFragment
 
 class NoticeListViewModel : BaseViewModel() {
-    private val _noticeLiveData = MutableLiveData<List<NoticeData?>?>()
-    val noticeLiveData: LiveData<List<NoticeData?>?> get() = _noticeLiveData
+    val noticeLiveData: LiveData<List<NoticeData?>?>
+        field = MutableLiveData<List<NoticeData?>?>()
 
     fun fetchNoticeListFromFirebase() {
         fireLoadingEvent(true)
@@ -38,7 +38,7 @@ class NoticeListViewModel : BaseViewModel() {
                     } catch (e: Exception) {
                         e.printStackTrace()
                     } finally {
-                        _noticeLiveData.postValue(noticeList)
+                        noticeLiveData.postValue(noticeList)
                     }
                     fireLoadingEvent(false)
                 } else fireLoadingEvent(false)

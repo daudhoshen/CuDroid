@@ -7,7 +7,8 @@ import com.ismail.cu.databinding.ActivityAuthBinding
 import com.ismail.cu.util.getColorCompat
 
 class AuthActivity : BaseActivity<ActivityAuthBinding>(
-    onInflate = ActivityAuthBinding::inflate
+    onInflate = ActivityAuthBinding::inflate,
+    isLightSystemBars = false
 ) {
     override fun initOnCreate(savedInstanceState: Bundle?) {
         window.statusBarColor = resources.getColorCompat(R.color.color_window)

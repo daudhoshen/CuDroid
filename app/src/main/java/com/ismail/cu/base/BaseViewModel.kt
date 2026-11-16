@@ -1,31 +1,42 @@
-package com.ismail.cu.base;
+package com.ismail.cu.base
 
-import android.os.Bundle;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
-import com.ismail.cu.base.event.Event;
-import com.ismail.cu.base.event.NavigateEvent;
+import android.os.Bundle
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import com.ismail.cu.base.event.Event
+import com.ismail.cu.base.event.NavigateEvent
 
-public abstract class BaseViewModel extends ViewModel {
-    private final MutableLiveData<Event<String>> messageEvent = new MutableLiveData<>();
-    public LiveData<Event<String>> getMessageEvent() { return messageEvent; }
+abstract class BaseViewModel : ViewModel() {
+    val messageEvent: LiveData<Event<String>>
+        field = MutableLiveData()
+    val loadingEvent: LiveData<Event<Boolean>>
+        field = MutableLiveData()
+    val navigateEvent: LiveData<Event<NavigateEvent>>
+        field = MutableLiveData()
 
-    private final MutableLiveData<Event<Boolean>> loadingEvent = new MutableLiveData<>();
-    public LiveData<Event<Boolean>> getLoadingEvent() { return loadingEvent; }
-
-    private final MutableLiveData<Event<NavigateEvent>> navigateEvent = new MutableLiveData<>();
-    public LiveData<Event<NavigateEvent>> getNavigateEvent() { return navigateEvent; }
-
-    protected void fireMessageEvent(String message) {
-        if (message != null && !message.isEmpty()) messageEvent.postValue(new Event<>(message));
+    protected fun fireMessageEvent(
+        message: String?
+    ) {
+        if (!message.isNullOrEmpty()) messageEvent.postValue(
+            Event(message)
+        )
     }
 
-    protected void fireLoadingEvent(Boolean isLoading) {
-        loadingEvent.postValue(new Event<>(isLoading));
+    protected fun fireLoadingEvent(
+        isLoading: Boolean
+    ) {
+        loadingEvent.postValue(
+            Event(isLoading)
+        )
     }
 
-    public void fireNavigateEvent(int id, Bundle bundle) {
-        navigateEvent.postValue(new Event<>(new NavigateEvent(id, bundle)));
+    fun fireNavigateEvent(
+        id: Int,
+        bundle: Bundle?
+    ) {
+        navigateEvent.postValue(
+            Event(NavigateEvent(id, bundle))
+        )
     }
 }

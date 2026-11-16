@@ -14,17 +14,17 @@ class AssignmentAddViewModel : BaseViewModel() {
     fun validateAssignmentInputAndUploadToFirebase(
         assignmentTitleEt: EditText, assignmentDetailsEt: EditText
     ) {
-        if (assignmentTitleEt.getText().toString().isEmpty()) {
+        if (assignmentTitleEt.text.toString().isEmpty()) {
             assignmentTitleEt.showErrorOnUi("Enter Assignment Title")
             return
         }
-        if (assignmentDetailsEt.getText().toString().isEmpty()) {
+        if (assignmentDetailsEt.text.toString().isEmpty()) {
             assignmentDetailsEt.showErrorOnUi("Enter Assignment Details")
             return
         }
         uploadAssignmentTOFirebase(
-            assignmentTitleEt.getText().toString(),
-            assignmentDetailsEt.getText().toString(),
+            assignmentTitleEt.text.toString(),
+            assignmentDetailsEt.text.toString(),
             getCurrentDate()
         )
     }

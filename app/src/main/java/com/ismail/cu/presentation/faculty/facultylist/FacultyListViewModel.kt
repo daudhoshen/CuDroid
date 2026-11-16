@@ -14,8 +14,8 @@ import com.ismail.cu.model.FacultyData
 import com.ismail.cu.presentation.faculty.facultyupdate.FacultyUpdateFragment
 
 class FacultyListViewModel : BaseViewModel() {
-    private val _facultyLiveData = MutableLiveData<List<FacultyData?>?>()
-    val facultyLiveData: LiveData<List<FacultyData?>?> get() = _facultyLiveData
+    val facultyLiveData: LiveData<List<FacultyData?>?>
+        field = MutableLiveData<List<FacultyData?>?>()
 
     fun fetchFacultyListFromFirebase() {
         fireLoadingEvent(true)
@@ -36,7 +36,7 @@ class FacultyListViewModel : BaseViewModel() {
                         } catch (e: Exception) {
                             e.printStackTrace()
                         } finally {
-                            _facultyLiveData.postValue(facultyList)
+                            facultyLiveData.postValue(facultyList)
                         }
                         fireLoadingEvent(false)
                     } else fireLoadingEvent(false)

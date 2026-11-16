@@ -11,7 +11,9 @@ import com.ismail.cu.util.enableEdgeToEdgeXmlActivity
 import com.ismail.cu.util.setupSystemBarsAppearance
 
 abstract class BaseActivity<VB: ViewBinding>(
-    private val onInflate: (LayoutInflater) -> VB
+    private val onInflate: (LayoutInflater) -> VB,
+    private val reserveNavInset: Boolean = true,
+    private val isLightSystemBars: Boolean = true
 ) : AppCompatActivity() {
     protected lateinit var binding: VB
         private set
@@ -22,10 +24,10 @@ abstract class BaseActivity<VB: ViewBinding>(
         if (Build.VERSION.SDK_INT < 30) window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
         else window?.setDecorFitsSystemWindows(true)*/
         enableEdgeToEdgeXmlActivity(
-            reserveNavInset = true
+            reserveNavInset = reserveNavInset
         )
         setupSystemBarsAppearance(
-            isLightSystemBars = true
+            isLightSystemBars = isLightSystemBars
         )
         binding = onInflate(layoutInflater)
         setContentView(binding.root)

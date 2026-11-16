@@ -9,12 +9,12 @@ import com.ismail.cu.base.BaseViewModel
 import com.ismail.cu.model.AssignmentData
 
 class AssignmentViewViewModel : BaseViewModel() {
-    private val _assignmentLiveData = MutableLiveData<AssignmentData?>()
-    val assignmentLiveData: LiveData<AssignmentData?> get() = _assignmentLiveData
+    val assignmentLiveData: LiveData<AssignmentData?>
+        field = MutableLiveData<AssignmentData?>()
 
     fun fetchAssignmentFromBundle(bundle: String?) {
         try {
-            _assignmentLiveData.postValue(
+            assignmentLiveData.postValue(
                 Gson().fromJson(bundle, AssignmentData::class.java)
             )
         } catch (e: Exception) {
